@@ -2,7 +2,7 @@
 
 This package provides a compact and efficient implementation for evaluating poker hands of arbitrary size. Unlike naive approaches that enumerate all 5-card subsets (e.g. 21 for Hold’em), this evaluator works **directly on bitmask representations** of cards. As a result, it determines the strongest 5-card hand **in constant time relative to hand size**, using only bitwise operations and rank masks.
 
-All critical routines are JIT-compiled with [Numba](https://numba.pydata.org), yielding performance close to optimized C while retaining the readability and portability of Python.
+Because we use [Numba](https://numba.pydata.org), this is actually not that slow. Yay.
 
 ## Foreword
 
