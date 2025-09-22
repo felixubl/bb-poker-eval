@@ -154,13 +154,12 @@ Generating 10,000,000 random 7-card hands...
 Converting to 4×uint16 suit masks...
 Warming up evaluator kernels...
 
-old_evaluator : 1.037 s  ->  9,640,937 hands/s   (checksum 100704877325876)
-new_evaluator : 0.141 s  -> 70,679,020 hands/s   (checksum 80859950169478)
+old_evaluator : 1.037 s  ->  9,640,937 hands/s
+new_evaluator : 0.141 s  -> 70,679,020 hands/s
 ```
 
 That’s roughly a **7.3× speed-up** for the new path on this workload.
 
-> Note: Checksums differ because they reflect internal details of the benchmark harness (e.g., packed vs tuple, ordering). They’re included as produced by your comparison run.
 
 If we allow for paralell processing we can reach 200-400 M Hands per second. (At least on my machine)
 
