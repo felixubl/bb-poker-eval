@@ -130,13 +130,13 @@ All numbers below are from your provided runs (single thread), after Numba compi
 ### New evaluator (`optimized_bb_poker_eval.py) live timings
 
 ```
-EvaluateAll5Cards   :  11 ns   (2,598,960 iterations)
-EvaluateAll6Cards   :  12 ns  (20,358,520 iterations)
-EvaluateAll7Cards   :  12 ns (100,000,000 iterations)
-EvaluateAll7Cards   :  12 ns  (33,784,560 iterations)
-EvaluateRandom5Cards:  13 ns   (5,000,000 iterations)
-EvaluateRandom6Cards:  14 ns   (5,000,000 iterations)
-EvaluateRandom7Cards:  14 ns   (5,000,000 iterations)
+EvaluateAll5Cards   :  11 ns/op   (2,598,960 iterations)
+EvaluateAll6Cards   :  12 ns/op  (20,358,520 iterations)
+EvaluateAll7Cards   :  12 ns/op (100,000,000 iterations)
+EvaluateAll7Cards   :  12 ns/op  (33,784,560 iterations)
+EvaluateRandom5Cards:  13 ns/op   (5,000,000 iterations)
+EvaluateRandom6Cards:  14 ns/op   (5,000,000 iterations)
+EvaluateRandom7Cards:  14 ns/op   (5,000,000 iterations)
 
 Number of Hands          Time Used    Hands per Second
 All 5-card Hands         29.737 ms    87,399,660 /s
@@ -161,6 +161,8 @@ new_evaluator : 0.141 s  -> 70,679,020 hands/s   (checksum 80859950169478)
 That’s roughly a **7.3× speed-up** for the new path on this workload.
 
 > Note: Checksums differ because they reflect internal details of the benchmark harness (e.g., packed vs tuple, ordering). They’re included as produced by your comparison run.
+
+If we allow for paralell processing we can reach 200-400 M Hands per second. (At least on my machine)
 
 ---
 
