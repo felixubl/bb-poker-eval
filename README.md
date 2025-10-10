@@ -1,6 +1,6 @@
 # bb-poker-eval
 
-A compact, bitboard-based poker hand evaluator that finds the best 5-card hand **without enumerating subsets**. It operates on suit–rank bitmasks and uses simple bitwise algebra plus tiny lookup tables to resolve straights and ranks. Implemented with [Numba](https://numba.pydata.org) for near-C speed.
+A compact, bitboard-based poker hand evaluator that finds the best 5-card hand **without enumerating subsets**. It operates on suit–rank bitmasks and uses simple bitwise algebra plus tiny lookup tables to resolve straights and ranks. Implemented with [Numba](https://numba.pydata.org) ~~for near-C speed~~. Edit: I rewrote the thing in C++ and got Around 200 M Hands per second on a single thread and 1.5 Billion Hands per second on multiple threads...
 
 The new evaluator (`optimized_bb_poker_eval.py`) introduces precomputed 8K-entry LUTs for popcount, straight endings, and highest-bit queries and packs results into a single `uint32` for very fast comparisons. The legacy evaluator (`bb_poker_eval.py`) is still included for reference and benchmarking.
 
