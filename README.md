@@ -1,7 +1,8 @@
 > **Archived.** This is an early generation of an evaluator that is still being
 > worked on. The current one is [palmistry3](https://github.com/felixubl/palmistry3). Its
 > [LINEAGE.md](https://github.com/felixubl/palmistry3/blob/main/LINEAGE.md) explains how this fits in, and every
-> generation's history lives in that repository too, on branch `history/bb-poker-eval`.
+> generation, this one included, lives in that repository too, under
+> `history/2-bb-poker-eval/`.
 
 # bb-poker-eval
 
